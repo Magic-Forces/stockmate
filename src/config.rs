@@ -23,7 +23,7 @@ pub fn handle_config() {
             }
         }
         Err(e) => {
-            println!("❌ Error reading configuration: {}", e);
+            println!("Error reading configuration: {}", e);
         }
     }
 }
