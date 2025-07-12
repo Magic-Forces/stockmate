@@ -1,0 +1,24 @@
+[project]
+name = "stockmate"
+version = "0.1.0"
+description = "Upload files to stock services and social media"
+authors = [
+    {name = "Magic-Forces",email = "root@foxlab.pl"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[project.urls]
+"Homepage" = "https://github.com/Magic-Forces/stockmate"
+"Bug Tracker" = "https://github.com/Magic-Forces/stockmate/issues"
+
+[tool.poetry]
+packages = [{include = "stockmate", from = "src"}]
+
+[tool.poetry.scripts]
+stockmate = "stockmate.main:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
