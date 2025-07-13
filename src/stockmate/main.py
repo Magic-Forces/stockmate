@@ -1,5 +1,10 @@
+#!/usr/bin/env python3
+from .cli import stockmate
+
+
 def main():
-    print("Stockmate - Upload files to stock services!")
-    
+    stockmate()
+
+
 if __name__ == "__main__":
     main()
