@@ -27,7 +27,7 @@ function App() {
             <hr className="border-gray-700 mb-6" />
             <nav className="space-y-4">
               <NavLink
-                to="/photos"
+                to="/"
                 className={({ isActive }) =>
                   `flex items-center gap-2 cursor-pointer hover:text-blue-400 ${
                     isActive ? "text-blue-400 font-semibold" : "text-gray-300"
@@ -80,7 +80,6 @@ function App() {
       <section className="flex-1">
         <Routes>
           <Route path="/" element={<Photos />} />
-          <Route path="/photos" element={<Photos />} />
           <Route path="/services" element={<Services />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/help" element={<Help />} />
