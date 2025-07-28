@@ -14,70 +14,60 @@ import Help from "./pages/Help";
 
 function App() {
   return (
-    <main className="flex min-h-screen bg-gray-900 text-white font-space-grotesk select-none">
-      <aside className="w-50 bg-gray-800 p-6">
-        <div className="flex flex-col h-full justify-between">
-          <div>
-            <NavLink
-              to="/"
-              className="block text-2xl font-bold mb-1 text-center"
-            >
-              Stockmate
-            </NavLink>
-            <hr className="border-gray-700 mb-6" />
-            <nav className="space-y-4">
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  `flex items-center gap-2 cursor-pointer hover:text-blue-400 ${
-                    isActive ? "text-blue-400 font-semibold" : "text-gray-300"
-                  }`
-                }
-              >
-                <FaPhotoVideo />
-                <span>Photos</span>
-              </NavLink>
-              <NavLink
-                to="/services"
-                className={({ isActive }) =>
-                  `flex items-center gap-2 cursor-pointer hover:text-blue-400 ${
-                    isActive ? "text-blue-400 font-semibold" : "text-gray-300"
-                  }`
-                }
-              >
-                <FaCloudUploadAlt />
-                <span>Services</span>
-              </NavLink>
-            </nav>
-          </div>
-
-          <div className="space-y-4">
-            <NavLink
-              to="/settings"
-              className={({ isActive }) =>
-                `flex items-center gap-2 cursor-pointer hover:text-blue-400 ${
-                  isActive ? "text-blue-400 font-semibold" : "text-gray-300"
-                }`
-              }
-            >
-              <FaCog />
-              <span>Settings</span>
-            </NavLink>{" "}
-            <NavLink
-              to="/help"
-              className={({ isActive }) =>
-                `flex items-center gap-2 cursor-pointer hover:text-blue-400 ${
-                  isActive ? "text-blue-400 font-semibold" : "text-gray-300"
-                }`
-              }
-            >
-              <FaQuestionCircle />
-              <span>Help</span>
-            </NavLink>
-          </div>
+    <div className="min-h-screen bg-gray-900 text-white font-space-grotesk select-none">
+      <nav className="border-b border-blue-400 px-6 py-3 flex items-center justify-between">
+        <NavLink to="/" className="text-2xl font-bold text-white">
+          Stockmate
+        </NavLink>
+        <div className="flex gap-6">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `flex items-center gap-1 hover:text-blue-400 ${
+                isActive ? "text-blue-400 font-semibold" : "text-gray-300"
+              }`
+            }
+          >
+            <FaPhotoVideo />
+            <span>Photos</span>
+          </NavLink>
+          <NavLink
+            to="/services"
+            className={({ isActive }) =>
+              `flex items-center gap-1 hover:text-blue-400 ${
+                isActive ? "text-blue-400 font-semibold" : "text-gray-300"
+              }`
+            }
+          >
+            <FaCloudUploadAlt />
+            <span>Services</span>
+          </NavLink>
+          <NavLink
+            to="/settings"
+            className={({ isActive }) =>
+              `flex items-center gap-1 hover:text-blue-400 ${
+                isActive ? "text-blue-400 font-semibold" : "text-gray-300"
+              }`
+            }
+          >
+            <FaCog />
+            <span>Settings</span>
+          </NavLink>
+          <NavLink
+            to="/help"
+            className={({ isActive }) =>
+              `w-10 h-10 flex items-center justify-center rounded hover:text-blue-400 bg-gray-800 transition ${
+                isActive ? "text-blue-400 bg-gray-800" : "text-gray-300"
+              }`
+            }
+            title="Help"
+          >
+            <FaQuestionCircle size={18} />
+          </NavLink>
         </div>
-      </aside>
-      <section className="flex-1">
+      </nav>
+
+      <section className="p-5">
         <Routes>
           <Route path="/" element={<Photos />} />
           <Route path="/services" element={<Services />} />
@@ -85,7 +75,7 @@ function App() {
           <Route path="/help" element={<Help />} />
         </Routes>
       </section>
-    </main>
+    </div>
   );
 }
 

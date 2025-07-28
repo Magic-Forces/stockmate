@@ -1,9 +1,7 @@
-import Header from "../components/Header";
-
 function Settings() {
   return (
     <div>
-      <Header title="Settings" />
+      <p className="text-2xl font-bold">Settings</p>
     </div>
   );
 }

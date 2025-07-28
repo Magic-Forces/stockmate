@@ -1,9 +1,7 @@
-import Header from "../components/Header";
-
 function Photos() {
   return (
     <div>
-      <Header title="Photos" />
+      <p className="text-2xl font-bold">Photos</p>
     </div>
   );
 }
