@@ -4,7 +4,6 @@ version = "0.1.0"
 description = "Upload photos to stock services and social media"
 authors = ["Magic-Forces"]
 license = "AGPL-3.0-or-later"
-license-file = "../LICENSE"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
