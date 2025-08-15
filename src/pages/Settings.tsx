@@ -129,8 +129,8 @@ function Settings() {
 
   return (
     <div>
-      <div className="bg-gray-800 rounded-xl p-5 shadow-md border border-gray-700">
-        <h2 className="text-xl font-semibold text-white mb-4">
+      <div className="bg-surface rounded-xl p-5 shadow-md border border-accent/40">
+        <h2 className="text-xl font-semibold text-light mb-4">
           Photo directories:
         </h2>
 
@@ -140,13 +140,13 @@ function Settings() {
             value={manualPath}
             onChange={(e) => setManualPath(e.target.value)}
             placeholder="Enter directory path..."
-            className="flex-1 min-w-[200px] px-3 py-2 rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex-1 min-w-[200px] px-3 py-2 rounded bg-bg text-light placeholder-light-700 focus:outline-none focus:ring-2 focus:ring-accent"
             disabled={loading}
           />
           <button
             onClick={() => savePath(manualPath, true)}
             disabled={loading || !manualPath.trim()}
-            className="px-4 py-2 rounded bg-green-600 hover:bg-green-500 disabled:bg-gray-600 text-white transition inline-flex items-center gap-2"
+            className="px-4 py-2 rounded bg-accent hover:bg-accent-700 disabled:bg-surface/60 text-bg transition inline-flex items-center gap-2"
           >
             <FaPlus />
             Add
@@ -154,7 +154,7 @@ function Settings() {
           <button
             onClick={handleChooseFolder}
             disabled={loading}
-            className="px-4 py-2 rounded bg-blue-600 hover:bg-blue-500 disabled:bg-gray-600 text-white transition inline-flex items-center gap-2"
+            className="px-4 py-2 rounded bg-bg hover:brightness-110 disabled:opacity-60 text-light transition inline-flex items-center gap-2 border border-accent"
           >
             <FaFolderOpen />
             Choose
@@ -162,18 +162,18 @@ function Settings() {
         </div>
 
         <div className="space-y-2">
-          <p className="text-sm text-gray-400 font-medium">
+          <p className="text-sm text-light-700 font-medium">
             Saved directories:
           </p>
           {savedPaths.length === 0 ? (
-            <p className="text-gray-500 text-sm italic">
+            <p className="text-light-700 text-sm italic">
               No directories added yet
             </p>
           ) : (
             savedPaths.map((directory) => (
               <div
                 key={directory.id}
-                className="flex items-center justify-between bg-gray-700 rounded px-3 py-2"
+                className="flex items-center justify-between bg-bg rounded px-3 py-2"
               >
                 {editingId === directory.id ? (
                   <div className="flex-1 flex items-center gap-2">
@@ -181,20 +181,20 @@ function Settings() {
                       type="text"
                       value={editingPath}
                       onChange={(e) => setEditingPath(e.target.value)}
-                      className="flex-1 px-2 py-1 rounded bg-gray-600 text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="flex-1 px-2 py-1 rounded bg-surface text-light text-sm focus:outline-none focus:ring-2 focus:ring-accent"
                       disabled={loading}
                     />
                     <button
                       onClick={handleChooseFolderForEdit}
                       disabled={loading}
-                      className="px-2 py-1 rounded bg-blue-600 hover:bg-blue-500 disabled:bg-gray-600 text-white transition text-sm"
+                      className="px-2 py-1 rounded bg-bg hover:brightness-110 disabled:opacity-60 text-light transition text-sm border border-accent"
                       title="Choose folder"
                     >
                       <FaFolderOpen size={12} />
                     </button>
                   </div>
                 ) : (
-                  <span className="text-gray-200 font-mono text-sm">
+                  <span className="text-light font-mono text-sm">
                     {directory.path}
                   </span>
                 )}
@@ -205,7 +205,7 @@ function Settings() {
                       <button
                         onClick={() => updatePath(directory.id, editingPath)}
                         disabled={loading || !editingPath.trim()}
-                        className="text-green-400 hover:text-green-300 disabled:text-gray-500 transition p-1"
+                        className="text-accent hover:text-accent-700 disabled:opacity-50 transition p-1"
                         title="Save changes"
                       >
                         <FaCheck />
@@ -213,7 +213,7 @@ function Settings() {
                       <button
                         onClick={cancelEditing}
                         disabled={loading}
-                        className="text-gray-400 hover:text-gray-300 disabled:text-gray-500 transition p-1"
+                        className="text-light/70 hover:text-light transition p-1"
                         title="Cancel"
                       >
                         <FaTimes />
@@ -224,7 +224,7 @@ function Settings() {
                       <button
                         onClick={() => startEditing(directory)}
                         disabled={loading || editingId !== null}
-                        className="text-blue-400 hover:text-blue-300 disabled:text-gray-500 transition p-1"
+                        className="text-accent hover:text-accent-700 disabled:opacity-50 transition p-1"
                         title="Edit path"
                       >
                         <FaEdit />
@@ -232,7 +232,7 @@ function Settings() {
                       <button
                         onClick={() => removePath(directory.id)}
                         disabled={loading || editingId !== null}
-                        className="text-red-400 hover:text-red-300 disabled:text-gray-500 transition p-1"
+                        className="text-light/70 hover:text-accent disabled:opacity-50 transition p-1"
                         title="Remove directory"
                       >
                         <FaTrash />

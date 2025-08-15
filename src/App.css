@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+/* Theme */
+@theme {
+  --color-bg: #1b1b1b;
+  --color-surface: #323232;
+  --color-light: #ffe7d0;
+  --color-accent: #fc6e20;
+
+  --color-accent-700: #e5631d;
+  --color-light-700: #e6d0bb;
+}
+
+/* Font */
 .font-space-grotesk {
   font-family: "Space Grotesk", sans-serif;
 }

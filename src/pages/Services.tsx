@@ -1,7 +1,7 @@
 function Services() {
   return (
     <div>
-      <p className="text-2xl font-bold">Services</p>
+      <p className="text-2xl font-bold text-light">Services</p>
     </div>
   );
 }

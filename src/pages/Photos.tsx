@@ -1,7 +1,7 @@
 function Photos() {
   return (
     <div>
-      <p className="text-2xl font-bold">Photos</p>
+      <p className="text-2xl font-bold text-light">Photos</p>
     </div>
   );
 }

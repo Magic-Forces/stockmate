@@ -15,9 +15,9 @@ import appIcon from "./assets/app-icon.svg";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white font-space-grotesk select-none">
-      <nav className="border-b border-blue-400 px-6 py-3 flex items-center justify-between">
-        <NavLink to="/" className="flex gap-2 text-2xl font-bold text-white">
+    <div className="min-h-screen bg-bg text-light font-space-grotesk select-none">
+      <nav className="border-b border-accent px-6 py-3 flex items-center justify-between">
+        <NavLink to="/" className="flex gap-2 text-2xl font-bold text-light">
           <img src={appIcon} alt="Stockmate icon" className="w-8 h-8" />
           Stockmate
         </NavLink>
@@ -25,8 +25,8 @@ function App() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `flex items-center gap-1 hover:text-blue-400 ${
-                isActive ? "text-blue-400 font-semibold" : "text-gray-300"
+              `flex items-center gap-1 hover:text-accent transition ${
+                isActive ? "text-accent font-semibold" : "text-light/80"
               }`
             }
           >
@@ -36,8 +36,8 @@ function App() {
           <NavLink
             to="/services"
             className={({ isActive }) =>
-              `flex items-center gap-1 hover:text-blue-400 ${
-                isActive ? "text-blue-400 font-semibold" : "text-gray-300"
+              `flex items-center gap-1 hover:text-accent transition ${
+                isActive ? "text-accent font-semibold" : "text-light/80"
               }`
             }
           >
@@ -47,8 +47,8 @@ function App() {
           <NavLink
             to="/settings"
             className={({ isActive }) =>
-              `flex items-center gap-1 hover:text-blue-400 ${
-                isActive ? "text-blue-400 font-semibold" : "text-gray-300"
+              `flex items-center gap-1 hover:text-accent transition ${
+                isActive ? "text-accent font-semibold" : "text-light/80"
               }`
             }
           >
@@ -58,8 +58,8 @@ function App() {
           <NavLink
             to="/help"
             className={({ isActive }) =>
-              `w-10 h-10 flex items-center justify-center rounded hover:text-blue-400 bg-gray-800 transition ${
-                isActive ? "text-blue-400 bg-gray-800" : "text-gray-300"
+              `w-10 h-10 flex items-center justify-center rounded bg-surface transition hover:text-accent ${
+                isActive ? "text-accent" : "text-light/80"
               }`
             }
             title="Help"
