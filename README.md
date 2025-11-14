@@ -1,73 +1,59 @@
-# React + TypeScript + Vite
+# Stockmate 📸
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Stockmate is a desktop application designed to assist photographers in streamlining the process of uploading photos to multiple stock services and social media platforms. It focuses on efficient management of keywords, tags, and titles to optimize the submission workflow.
 
-Currently, two official plugins are available:
+## Roadmap & Planned Features 🚀
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Here is a rough outline of the features we plan to build. Contributions are welcome at any stage!
 
-## React Compiler
+### Phase 1: Core Local Functionality
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [ ] **Select Photo Folder:** Users can now select a folder containing photos.
+- [ ] **Photo Browser:** Display thumbnails of images from user-selected folders.
+- [ ] **Metadata Editor:**
+  - [ ] View and edit titles, descriptions, and keywords for each photo.
+  - [ ] Save metadata changes (e.g., to database or directly to EXIF data).
+  - [ ] Bulk edit metadata for multiple selected images.
 
-## Expanding the ESLint configuration
+### Phase 2: Stock Platform Integration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [ ] **FTP Uploader:**
+  - [ ] Implement FTP client to upload images to stock photo sites.
+  - [ ] Create predefined FTP settings for popular services (e.g., Shutterstock, Adobe Stock).
+  - [ ] Allow users to configure and save custom FTP server settings.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Phase 3: Social Media Integration
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [ ] **Social Media Posting:**
+  - [ ] Connect to Instagram and Facebook APIs.
+  - [ ] Post photos with their titles/descriptions directly from the app.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Tech Stack 🛠️
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Framework:** [Electron](https://www.electronjs.org/)
+- **Frontend:** [React](https://reactjs.org/) with [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Ready to jump in? Here’s how to get the development environment running:
+
+1.  Clone the repository.
+2.  Install dependencies with `pnpm install`.
+3.  Run the app in development mode with `pnpm dev`.
+
+## Contributing 👋
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+You can contribute by:
+
+- Picking up a feature from the roadmap.
+- Reporting a bug.
+- Suggesting a new feature or enhancement.
+
+Please feel free to fork the repo, create a feature branch, and submit a pull request.
+
+## License
+
+Distributed under the AGPL-3.0 License. See `LICENSE` for more information.

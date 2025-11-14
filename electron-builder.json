@@ -1,0 +1,11 @@
+{
+  "appId": "pl.foxlab.stockmate",
+  "files": ["dist/electron", "dist/ui"],
+  "icon": "public/app-icon.ico",
+  "win": {
+    "target": "msi"
+  },
+  "directories": {
+    "output": "dist/build/${platform}/${arch}"
+  }
+}

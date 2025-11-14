@@ -2,12 +2,14 @@
   "name": "stockmate",
   "private": true,
   "version": "0.0.0",
+  "description": "A stock management application.",
+  "author": "Magic-Forces",
   "type": "module",
+  "main": "dist/electron/main.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "predev": "tsc --project src/electron/tsconfig.json",
+    "dev": "concurrently \"tsc --project src/electron/tsconfig.json --watch\" \"vite\" \"cross-env NODE_ENV=development electron .\\\"",
+    "build": "rimraf dist && tsc --project src/electron/tsconfig.json && vite build && electron-builder --win --x64"
   },
   "dependencies": {
     "react": "^19.2.0",
@@ -19,12 +21,18 @@
     "@types/react": "^19.2.4",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "^39.1.2",
+    "electron-builder": "^26.0.12",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "rimraf": "^6.1.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "^7.2.2"
-  }
+  },
+  "packageManager": "pnpm@10.22.0+sha512.bf049efe995b28f527fd2b41ae0474ce29186f7edcb3bf545087bd61fbbebb2bf75362d1307fda09c2d288e1e499787ac12d4fcb617a974718a6051f2eee741c"
 }
