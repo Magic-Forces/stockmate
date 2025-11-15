@@ -12,7 +12,7 @@ function App() {
   }
 
   return (
-    <main className="min-h-screen bg-bg text-light select-none">
+    <main>
       <form
         onSubmit={(e) => {
           e.preventDefault();

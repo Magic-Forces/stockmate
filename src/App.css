@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+body {
+  background-color: var(--color-bg);
+  color: var(--color-light);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 /* Theme */
 @theme {
   --color-bg: #1b1b1b;
