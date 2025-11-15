@@ -9,11 +9,12 @@ body {
 
 /* Theme */
 @theme {
-  --color-bg: #1b1b1b;
-  --color-surface: #323232;
-  --color-light: #658761;
-  --color-accent: #dfa05d;
+  --color-bg: #151617;
+  --color-surface: #262a30;
 
-  --color-accent-700: #ac5045;
-  --color-light-700: #4e6a54;
+  --color-light: #e3e7e9;
+  --color-light-700: #a1abb1;
+
+  --color-accent: #4c9f70;
+  --color-accent-700: #2f6b4a;
 }
