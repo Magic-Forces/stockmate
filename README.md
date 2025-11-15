@@ -8,7 +8,7 @@ Here is a rough outline of the features we plan to build. Contributions are welc
 
 ### Phase 1: Core Local Functionality
 
-- [x] **Select Photo Folder:** Users can now select a folder containing photos.
+- [ ] **Select Photo Folder:** Users can now select a folder containing photos.
 - [ ] **Photo Browser:** Display thumbnails of images from user-selected folders.
 - [ ] **Metadata Editor:**
   - [ ] View and edit titles, descriptions, and keywords for each photo.
