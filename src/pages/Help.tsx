@@ -20,7 +20,7 @@ function Help() {
         </p>
         <button
           onClick={() => openUrl("https://github.com/Magic-Forces/stockmate")}
-          className="flex items-center gap-2 bg-accent hover:bg-accent-700 text-bg font-medium py-2 px-4 rounded mt-5"
+          className="flex items-center gap-2 bg-accent hover:bg-accent-700 text-bg font-medium py-2 px-4 rounded mt-5 transition"
         >
           <FaGithub size={17} />
           View on GitHub

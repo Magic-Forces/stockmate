@@ -16,7 +16,10 @@ function App() {
   return (
     <main>
       <nav className="border-b border-accent px-6 py-3 flex items-center justify-between">
-        <NavLink to="/" className="flex gap-2 text-2xl font-bold">
+        <NavLink
+          to="/"
+          className="flex gap-2 text-2xl font-bold hover:drop-shadow-[0_0_1em_var(--color-light)] transition"
+        >
           <img src={appIcon} alt="Stockmate icon" className="w-8 h-8" />
           Stockmate
         </NavLink>
@@ -24,8 +27,10 @@ function App() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `flex items-center gap-1 hover:text-accent ${
-                isActive ? "text-accent font-semibold" : "text-light/80"
+              `flex items-center gap-1 hover:text-accent transition ${
+                isActive
+                  ? "text-accent font-semibold drop-shadow-[0_0_1em_var(--color-accent-700)]"
+                  : "text-light/80"
               }`
             }
           >
@@ -35,8 +40,10 @@ function App() {
           <NavLink
             to="/services"
             className={({ isActive }) =>
-              `flex items-center gap-1 hover:text-accent ${
-                isActive ? "text-accent font-semibold" : "text-light/80"
+              `flex items-center gap-1 hover:text-accent transition ${
+                isActive
+                  ? "text-accent font-semibold drop-shadow-[0_0_1em_var(--color-accent-700)]"
+                  : "text-light/80"
               }`
             }
           >
@@ -46,8 +53,10 @@ function App() {
           <NavLink
             to="/settings"
             className={({ isActive }) =>
-              `flex items-center gap-1 hover:text-accent ${
-                isActive ? "text-accent font-semibold" : "text-light/80"
+              `flex items-center gap-1 hover:text-accent transition ${
+                isActive
+                  ? "text-accent font-semibold drop-shadow-[0_0_1em_var(--color-accent-700)]"
+                  : "text-light/80"
               }`
             }
           >
@@ -58,8 +67,10 @@ function App() {
             to="/help"
             title="Help"
             className={({ isActive }) =>
-              `w-10 h-10 flex items-center justify-center rounded bg-surface hover:text-accent ${
-                isActive ? "text-accent" : "text-light/80"
+              `w-8 h-8 flex items-center justify-center rounded bg-surface hover:text-accent transition ${
+                isActive
+                  ? "text-accent drop-shadow-[0_0_1em_var(--color-accent-700)]"
+                  : "text-light/80"
               }`
             }
           >
