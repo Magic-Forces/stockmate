@@ -23,7 +23,11 @@
     }
   },
   "bundle": {
+    "publisher": "Magic-Forces",
+    "shortDescription": "Stock Photo Manager",
     "active": true,
+    "copyright": "© 2025 Magic-Forces Licensed under the AGPL-3.0",
+    "license": "AGPL-3.0",
     "targets": "all",
     "icon": [
       "icons/32x32.png",

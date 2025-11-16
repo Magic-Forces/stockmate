@@ -1,16 +1,23 @@
 {
   "name": "stockmate",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Upload photos to stock services and social media",
   "author": "Magic-Forces",
   "license": "AGPL-3.0-or-later",
+  "bugs": "https://github.com/magic-forces/stockmate/issues/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/magic-forces/stockmate/"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "clear": "node scripts/clear.js",
+    "reset": "node scripts/reset.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
