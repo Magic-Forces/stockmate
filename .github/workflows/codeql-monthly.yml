@@ -1,13 +1,11 @@
-name: "CodeQL Advanced"
+name: "CodeQL Monthly Full Scan"
 
 on:
-  pull_request:
-    branches: ["main"]
   schedule:
     - cron: "0 4 6 * *"
 
 jobs:
-  analyze:
+  full-scan:
     name: Analyze (${{ matrix.language }})
     runs-on: ubuntu-latest
 
@@ -19,9 +17,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - language: javascript-typescript
-            build-mode: none
           - language: rust
+            build-mode: autobuild
+          - language: javascript-typescript
             build-mode: none
 
     steps:
@@ -37,4 +35,4 @@ jobs:
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v4
         with:
-          category: codeql-${{ matrix.language }}
+          category: full-codeql-${{ matrix.language }}

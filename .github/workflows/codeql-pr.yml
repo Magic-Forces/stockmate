@@ -1,0 +1,63 @@
+name: "CodeQL PR Scan"
+
+on:
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  pr-scan:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: rust
+            build-mode: autobuild
+            match: "(src-tauri/.*\\.rs)|(src-tauri/Cargo\\.(toml|lock))"
+
+          - language: javascript-typescript
+            build-mode: none
+            match: "(src/.*\\.(ts|tsx))|(scripts/.*\\.(js))|(package\\.json)|(pnpm-lock\\.yaml)"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Check changed files
+        id: changed
+        run: |
+          git diff --name-only origin/${{ github.base_ref }}...HEAD > changed.txt
+
+          echo "Checking changes against pattern: ${{ matrix.match }}"
+
+          if grep -E '${{ matrix.match }}' changed.txt >/dev/null; then
+            echo "Match found for ${{ matrix.language }}."
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "No match found for ${{ matrix.language }}."
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Skip if irrelevant
+        if: steps.changed.outputs.changed == 'false'
+        run: echo "No relevant changes for ${{ matrix.language }} — skipping."
+
+      - name: Initialize CodeQL
+        if: steps.changed.outputs.changed == 'true'
+        uses: github/codeql-action/init@v4
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: ${{ matrix.build-mode }}
+
+      - name: Perform CodeQL Analysis
+        if: steps.changed.outputs.changed == 'true'
+        uses: github/codeql-action/analyze@v4
+        with:
+          category: pr-codeql-${{ matrix.language }}
