@@ -1,0 +1,44 @@
+{
+  "name": "stockmate",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Upload photos to stock services and social media",
+  "author": "Magic-Forces",
+  "license": "GPL-3.0-or-later",
+  "bugs": "https://github.com/magic-forces/stockmate/issues/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/magic-forces/stockmate/"
+  },
+  "type": "module",
+  "scripts": {
+    "icon": "pnpm tauri icon ./public/app-icon.svg",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "tauri": "tauri",
+    "s:clear": "node scripts/clear.js",
+    "s:reset": "node scripts/reset.js"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.9.0",
+    "@tauri-apps/plugin-dialog": "^2.4.2",
+    "@tauri-apps/plugin-log": "^2.7.1",
+    "@tauri-apps/plugin-opener": "^2.5.2",
+    "@tauri-apps/plugin-sql": "^2.3.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.9.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.17",
+    "@tauri-apps/cli": "^2.9.4",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "semver": "^7.7.3",
+    "tailwindcss": "^4.1.17",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4"
+  }
+}
