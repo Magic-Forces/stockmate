@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "stockmate",
+  "version": "0.0.0",
+  "identifier": "pl.foxlab.stockmate",
+  "build": {
+    "beforeDevCommand": "pnpm icon && pnpm dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "pnpm icon && pnpm build",
+    "frontendDist": "../dist",
+    "removeUnusedCommands": true
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Stockmate",
+        "width": 800,
+        "height": 600
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "plugins": {
+    "sql": {
+      "preload": ["sqlite:stockmate_data.db"]
+    }
+  },
+  "bundle": {
+    "publisher": "Magic-Forces",
+    "shortDescription": "Stock Photo Manager",
+    "active": true,
+    "copyright": "© 2025 Magic-Forces Licensed under the GPL-3.0-or-later",
+    "license": "GPL-3.0-or-later",
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}
