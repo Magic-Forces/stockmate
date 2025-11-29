@@ -82,7 +82,8 @@ function isOnMain() {
 
 function doesTagExist(version) {
   const tag = "v" + version;
-  const output = execSync(`git tag --list "${tag}"`).toString().trim();
+  const output = execSync("git", ["tag", "--list", tag]).toString().trim();
+
   if (output === tag) {
     throw new Error(`Tag ${tag} already exists.`);
   }
@@ -115,7 +116,7 @@ function updateToml(filePath, version) {
 
 function commitChanges(version) {
   execSync("git add .", { stdio: "inherit" });
-  execSync(`git commit -m "chore: bump version to ${version}"`, {
+  execSync("git", ["commit", "-m", `chore: bump version to ${version}`], {
     stdio: "inherit",
   });
 
@@ -124,7 +125,10 @@ function commitChanges(version) {
 
 function createTag(version) {
   const tag = "v" + version;
-  execSync(`git tag -a ${tag} -m "Release ${tag}"`, { stdio: "inherit" });
+
+  execSync("git", ["tag", "-a", tag, "-m", `Release ${tag}`], {
+    stdio: "inherit",
+  });
 
   console.log(`[version] Created tag: ${tag}`);
 }
