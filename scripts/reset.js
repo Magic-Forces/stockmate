@@ -17,6 +17,13 @@ try {
         path.join(HOME, "AppData", "Local", "pl.foxlab.stockmate", "logs"),
       ];
       break;
+    case "linux":
+      folders = [
+        path.join(HOME, ".config", "pl.foxlab.stockmate"),
+        path.join(HOME, ".local", "share", "pl.foxlab.stockmate"),
+        path.join(HOME, ".local", "share", "stockmate"),
+      ];
+      break;
     default:
       folders = undefined;
       break;

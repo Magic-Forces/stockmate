@@ -1,11 +1,11 @@
 import fs from "fs";
+import { spawnSync } from "child_process";
 
 const FOLDERS = [
   "dist",
   "node_modules",
   "src-tauri/gen/schemas",
   "src-tauri/icons",
-  "src-tauri/target",
 ];
 
 try {
@@ -15,6 +15,17 @@ try {
     fs.rmSync(folder, { recursive: true, force: true });
     console.log(`[clear] removed: ${folder}`);
   });
+
+  console.log("[clear] Running 'cargo clean' in src-tauri...");
+  const result = spawnSync("cargo", ["clean"], {
+    cwd: "src-tauri",
+    stdio: "inherit",
+    shell: true,
+  });
+
+  if (result.status !== 0) {
+    throw new Error(`'cargo clean' exited with code ${result.status}`);
+  }
 
   console.log("\n[clear] Cleanup finished successfully.");
 } catch (error) {
