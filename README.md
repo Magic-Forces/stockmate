@@ -27,7 +27,7 @@ Stockmate is a desktop application designed to assist photographers in streamlin
 ## Tech Stack 🛠️
 
 - **Core Framework:** [Tauri](https://tauri.app/) (Rust backend + Webview frontend)
-- **Frontend:** [React](https://reactjs.org/) with [TypeScript](https://www.typescriptlang.org/)
+- **Frontend:** [Svelte](https://svelte.dev/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **Build Tool:** [Vite](https://vitejs.dev/)
 - **Package Manager:** [pnpm](https://pnpm.io/)

@@ -2,10 +2,11 @@ import fs from "fs";
 import { spawnSync } from "child_process";
 
 const FOLDERS = [
-  "dist",
+  "build",
   "node_modules",
   "src-tauri/gen/schemas",
   "src-tauri/icons",
+  ".svelte-kit",
 ];
 
 try {
@@ -16,7 +17,7 @@ try {
     console.log(`[clear] removed: ${folder}`);
   });
 
-  console.log("[clear] Running 'cargo clean' in src-tauri...");
+  console.log("[clear] Running 'cargo clean'");
   const result = spawnSync("cargo", ["clean"], {
     cwd: "src-tauri",
     stdio: "inherit",

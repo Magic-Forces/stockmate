@@ -31,7 +31,7 @@ try {
 
   if (!folders) {
     console.log(
-      `[reset] No specific folders to clean for this platform (${PLATFORM}).`
+      `[reset] No specific folders to clean for this platform (${PLATFORM}).`,
     );
     process.exit(0);
   }

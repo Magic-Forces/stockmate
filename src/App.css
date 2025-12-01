@@ -8,7 +8,7 @@ body {
   font-family: "Space Grotesk", sans-serif;
 }
 
-/* Theme */
+/* Color theme */
 @theme {
   --color-bg: #151617;
   --color-surface: #262a30;
