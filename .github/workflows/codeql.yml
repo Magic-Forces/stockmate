@@ -1,0 +1,83 @@
+name: "CodeQL PR Scan"
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  pr-scan:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: rust
+            build-mode: none
+            match: "(src-tauri/.*\\.rs)|(src-tauri/Cargo\\.(toml|lock))"
+
+          - language: javascript-typescript
+            build-mode: none
+            match: "(src/.*\\.(ts|svelte))|(scripts/.*\\.(js))|(package\\.json)|(pnpm-lock\\.yaml)"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Check changed files
+        id: changed
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            REF_TO_COMPARE="origin/${{ github.base_ref }}"
+            git diff --name-only "${REF_TO_COMPARE}" HEAD > changed.txt || true
+
+          elif [[ "${{ github.event_name }}" == "push" ]]; then
+            REF_TO_COMPARE="${{ github.event.before }}"
+
+            if git rev-parse --verify "${REF_TO_COMPARE}^{commit}" >/dev/null 2>&1; then
+              git diff --name-only "${REF_TO_COMPARE}" HEAD > changed.txt || true
+            else
+              echo "Warning: previous commit '${REF_TO_COMPARE}' not found. This is probably a force push or a new branch. Scanning all files."
+              git ls-files > changed.txt
+            fi
+
+          else
+             echo "Assuming full scan as event is not push or pull_request: ${{ github.event_name }}"
+             git ls-files > changed.txt
+          fi
+
+          echo "Checking changes against pattern: ${{ matrix.match }}"
+
+          if grep -E '${{ matrix.match }}' changed.txt >/dev/null; then
+            echo "Match found for ${{ matrix.language }}."
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "No match found for ${{ matrix.language }}."
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+        shell: /usr/bin/bash -e {0}
+
+      - name: Skip if irrelevant
+        if: steps.changed.outputs.changed == 'false'
+        run: echo "No relevant changes for ${{ matrix.language }} — skipping."
+
+      - name: Initialize CodeQL
+        if: steps.changed.outputs.changed == 'true'
+        uses: github/codeql-action/init@v4
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: ${{ matrix.build-mode }}
+
+      - name: Perform CodeQL Analysis
+        if: steps.changed.outputs.changed == 'true'
+        uses: github/codeql-action/analyze@v4
+        with:
+          category: pr-codeql-${{ matrix.language }}
