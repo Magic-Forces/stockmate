@@ -8,25 +8,22 @@ importers:
 
   .:
     dependencies:
-      '@tauri-apps/api':
-        specifier: ^2.9
-        version: 2.9.1
-      '@tauri-apps/plugin-dialog':
-        specifier: ^2.4
-        version: 2.4.2
-      '@tauri-apps/plugin-log':
-        specifier: ^2.7
-        version: 2.7.1
-      '@tauri-apps/plugin-opener':
-        specifier: ^2.5
-        version: 2.5.2
-      '@tauri-apps/plugin-sql':
-        specifier: ^2.3
-        version: 2.3.1
-    devDependencies:
       '@lucide/svelte':
         specifier: ^0.555
         version: 0.555.0(svelte@5.45.3)
+      '@tauri-apps/api':
+        specifier: ^2.9
+        version: 2.9.1
+      '@tauri-apps/plugin-opener':
+        specifier: ^2.5
+        version: 2.5.2
+      svelte:
+        specifier: ^5.45
+        version: 5.45.3
+      tailwindcss:
+        specifier: ^4.1
+        version: 4.1.17
+    devDependencies:
       '@sveltejs/adapter-static':
         specifier: ^3.0
         version: 3.0.10(@sveltejs/kit@2.49.0(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.45.3)(vite@7.2.6(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.45.3)(vite@7.2.6(jiti@2.6.1)(lightningcss@1.30.2)))
@@ -57,15 +54,9 @@ importers:
       semver:
         specifier: ^7.7
         version: 7.7.3
-      svelte:
-        specifier: ^5.45
-        version: 5.45.3
       svelte-check:
         specifier: ^4.3
         version: 4.3.4(picomatch@4.0.3)(svelte@5.45.3)(typescript@5.9.3)
-      tailwindcss:
-        specifier: ^4.1
-        version: 4.1.17
       typescript:
         specifier: ^5.9
         version: 5.9.3
@@ -607,17 +598,8 @@ packages:
     engines: {node: '>= 10'}
     hasBin: true
 
-  '@tauri-apps/plugin-dialog@2.4.2':
-    resolution: {integrity: sha512-lNIn5CZuw8WZOn8zHzmFmDSzg5zfohWoa3mdULP0YFh/VogVdMVWZPcWSHlydsiJhRQYaTNSYKN7RmZKE2lCYQ==}
-
-  '@tauri-apps/plugin-log@2.7.1':
-    resolution: {integrity: sha512-jdb+o0wxQc8PjnLktgGpOs9Dh1YupaOGDXzO+Y8peA1UZ1ep3eXv4E1oiJ7nIQVN0XUFDDhnn3aBszl8ijhR+A==}
-
   '@tauri-apps/plugin-opener@2.5.2':
     resolution: {integrity: sha512-ei/yRRoCklWHImwpCcDK3VhNXx+QXM9793aQ64YxpqVF0BDuuIlXhZgiAkc15wnPVav+IbkYhmDJIv5R326Mew==}
-
-  '@tauri-apps/plugin-sql@2.3.1':
-    resolution: {integrity: sha512-iNgHnFIR+jRkx9INKVKepzMlxXtNkJUaWuhagFjT4dOttPaNyRnVHgwTjpqZhyVjiklDh2UdEPAJkQKiCPAekw==}
 
   '@trivago/prettier-plugin-sort-imports@6.0.0':
     resolution: {integrity: sha512-Xarx55ow0R8oC7ViL5fPmDsg1EBa1dVhyZFVbFXNtPPJyW2w9bJADIla8YFSaNG9N06XfcklA9O9vmw4noNxkQ==}
@@ -1428,19 +1410,7 @@ snapshots:
       '@tauri-apps/cli-win32-ia32-msvc': 2.9.5
       '@tauri-apps/cli-win32-x64-msvc': 2.9.5
 
-  '@tauri-apps/plugin-dialog@2.4.2':
-    dependencies:
-      '@tauri-apps/api': 2.9.1
-
-  '@tauri-apps/plugin-log@2.7.1':
-    dependencies:
-      '@tauri-apps/api': 2.9.1
-
   '@tauri-apps/plugin-opener@2.5.2':
-    dependencies:
-      '@tauri-apps/api': 2.9.1
-
-  '@tauri-apps/plugin-sql@2.3.1':
     dependencies:
       '@tauri-apps/api': 2.9.1
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Github from "@lucide/svelte/icons/github";
+  import { Github } from "@lucide/svelte";
   import { getVersion } from "@tauri-apps/api/app";
   import { openUrl } from "@tauri-apps/plugin-opener";
   import { onMount } from "svelte";

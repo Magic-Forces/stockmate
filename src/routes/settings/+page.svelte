@@ -1,7 +1,5 @@
 <script lang="ts">
-  import FolderOpen from "@lucide/svelte/icons/folder-open";
-  import Plus from "@lucide/svelte/icons/plus";
-  import Trash from "@lucide/svelte/icons/trash";
+  import { FolderOpen, Plus, Trash } from "@lucide/svelte";
   import { invoke } from "@tauri-apps/api/core";
   import { onMount } from "svelte";
 
