@@ -1,7 +1,7 @@
 # Stockmate 📸
 
 <div align="center">
-  <img src="./public/app-icon.svg" alt="Stockmate Logo" width="120" />
+  <img src="./static/app-icon.svg" alt="Stockmate Logo" width="120" />
 </div>
 
 <h3 align="center">
