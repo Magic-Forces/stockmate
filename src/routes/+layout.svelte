@@ -1,10 +1,10 @@
 <script lang="ts">
-  import "../app.css";
   import { page } from "$app/state";
+  import "../app.css";
+  import CircleQuestionMark from "@lucide/svelte/icons/circle-question-mark";
   import CloudUpload from "@lucide/svelte/icons/cloud-upload";
   import Image from "@lucide/svelte/icons/image";
   import Settings from "@lucide/svelte/icons/settings";
-  import CircleQuestionMark from "@lucide/svelte/icons/circle-question-mark";
 </script>
 
 <main>

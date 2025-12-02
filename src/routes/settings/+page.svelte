@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import { invoke } from "@tauri-apps/api/core";
-  import Plus from "@lucide/svelte/icons/plus";
   import FolderOpen from "@lucide/svelte/icons/folder-open";
+  import Plus from "@lucide/svelte/icons/plus";
   import Trash from "@lucide/svelte/icons/trash";
+  import { invoke } from "@tauri-apps/api/core";
+  import { onMount } from "svelte";
 
   let path: string = "";
   let paths: string[] = [];

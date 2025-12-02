@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   import Github from "@lucide/svelte/icons/github";
-  import { openUrl } from "@tauri-apps/plugin-opener";
   import { getVersion } from "@tauri-apps/api/app";
+  import { openUrl } from "@tauri-apps/plugin-opener";
+  import { onMount } from "svelte";
 
   let version = "";
   onMount(async () => {

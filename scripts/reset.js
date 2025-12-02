@@ -1,6 +1,6 @@
-import path from "path";
 import fs from "fs";
 import os from "os";
+import path from "path";
 
 const PLATFORM = process.platform;
 const HOME = os.homedir();
