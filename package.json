@@ -15,6 +15,7 @@
     "icon": "pnpm tauri icon ./static/app-icon.svg",
     "dev": "vite dev",
     "build": "vite build",
+    "prepare": "svelte-kit sync || echo ''",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "format": "prettier --write . && cargo fmt --all --manifest-path ./src-tauri/Cargo.toml",
@@ -23,7 +24,7 @@
     "s:reset": "node scripts/reset.js"
   },
   "dependencies": {
-    "@lucide/svelte": "^0.555",
+    "@lucide/svelte": "^0.556",
     "@tauri-apps/api": "^2.9",
     "@tauri-apps/plugin-opener": "^2.5",
     "svelte": "^5.45",
