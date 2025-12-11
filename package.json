@@ -40,7 +40,6 @@
     "prettier": "^3.7",
     "prettier-plugin-svelte": "^3.4",
     "prettier-plugin-tailwindcss": "^0.7",
-    "semver": "^7.7",
     "svelte-check": "^4.3",
     "typescript": "^5.9",
     "vite": "^7.2"
