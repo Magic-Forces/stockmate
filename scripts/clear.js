@@ -21,7 +21,6 @@ try {
   const result = spawnSync("cargo", ["clean"], {
     cwd: "src-tauri",
     stdio: "inherit",
-    shell: true,
   });
 
   if (result.status !== 0) {
