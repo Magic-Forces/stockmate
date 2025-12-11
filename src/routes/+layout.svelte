@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from "$app/state";
   import "../app.css";
+  import "@fontsource-variable/space-grotesk";
   import {
     CircleQuestionMark,
     CloudUpload,

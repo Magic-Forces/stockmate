@@ -24,7 +24,8 @@
     "s:reset": "node scripts/reset.js"
   },
   "dependencies": {
-    "@lucide/svelte": "^0.556",
+    "@fontsource-variable/space-grotesk": "^5.2",
+    "@lucide/svelte": "^0.560",
     "@tauri-apps/api": "^2.9",
     "@tauri-apps/plugin-opener": "^2.5",
     "svelte": "^5.45",
